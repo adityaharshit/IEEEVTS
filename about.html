@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEEE VTS Bangalore</title>
+    <script src="https://kit.fontawesome.com/871106cf4e.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/responsive.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="custom-navbar"></div>
+
+    <!-- About us -->
+    <section id="About-us" class="section-dark" style="padding-bottom:0;">
+        <div class="container">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="section-heading font-large text-white">About Us</h1>
+                    <p class="section-desc">VTS Bangalore is approved and inaugurated in early 2020. Founding chair, Dr Navin Kumar initiated with full dedication to take the society forward with around 40 professional members and a couple of student members. With the support of volunteer and their efforts, as on 2023, VTS Bangalore has over 350 members out of which over 200 is student member.</p>
+                </div>
+                <div class="col-lg-6 about-img">
+                    <img src="images/img2.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About bangalore chapter -->
+    <section id="About-bangalore-chapter" class="section-dark" style="padding-top:0;">
+        <div class="container">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-lg-6 about-img">
+                    <img src="images/img2.jpeg" alt="">
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="section-heading font-large text-white">About Bangalore Section</h1>
+                    <p class="section-desc">IEEE Bangalore Section was established in 1977 and is one of the most vibrant and dynamic IEEE Section across globe. Over the years the strength of the section has grown steadily and currently the Section membership stands more than 8600. This membership is spread across various sectors and is a nice blend of Industry, Academia and Research organizations…</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Counter -->
+    <section id="counter" class="section-light">
+        <div class="container">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-4 text-center">
+                    <div class="counter-total">0</div>
+                    <p class="section-desc text-dark">Total Members</p>
+                </div>
+                <div class="col-12 col-md-4 text-center">
+                    <div class="counter-professional">
+                        0
+                    </div>
+                    <p class="section-desc text-dark">Professional Members</p>
+                </div>
+                <div class="col-12 col-md-4 text-center">
+                    <div class="counter-student">
+                        0
+                    </div>
+                    <p class="section-desc text-dark">Student Members</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- start back-to-top -->
+    <div id="back-to-top">
+        <i class="fa fa-angle-up" title="Go top"></i>
+    </div>
+
+    <!-- Footer -->
+    <div class="custom-footer"></div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.waypoints.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/jquery.barfiller.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        $(document).ready(function(){
+            let counts = setInterval(updated);
+            let upto = 0;
+            function updated() {
+                let count = document.getElementsByClassName("counter-total");
+                count.innerHTML = ++upto;
+                if (upto === 1000) {
+                    clearInterval(counts);
+                }
+            }
+        })
+    </script>
+</body>
+</html>
