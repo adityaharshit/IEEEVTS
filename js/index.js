@@ -1,7 +1,7 @@
 
 //Attaching navbar to every page
 const navbar = document.querySelector('.custom-navbar');
-fetch("../assets/header.html")
+fetch("components/header.html")
 .then(res => res.text())
 .then(data =>{
     navbar.innerHTML = data;
@@ -10,7 +10,7 @@ fetch("../assets/header.html")
 
 //Attaching footer to every page
 const footer = document.querySelector('.custom-footer');
-fetch("../assets/footer.html")
+fetch("components/footer.html")
 .then(res => res.text())
 .then(data =>{
     footer.innerHTML = data;

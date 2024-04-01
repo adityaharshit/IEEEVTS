@@ -14,28 +14,54 @@
     <div class="custom-navbar"></div>
 
     <!-- About us -->
-    <section id="About-us" class="section-dark" style="padding-bottom:0;">
+    <section id="About-us" class="about-sec section-dark first-section padding-bottom0">
         <div class="container">
             <div class="row d-flex justify-content-center align-items-center">
-                <div class="col-lg-6">
+                <div class="col-lg-6 col-12">
                     <h1 class="section-heading font-large text-white">About Us</h1>
                     <p class="section-desc">VTS Bangalore is approved and inaugurated in early 2020. Founding chair, Dr Navin Kumar initiated with full dedication to take the society forward with around 40 professional members and a couple of student members. With the support of volunteer and their efforts, as on 2023, VTS Bangalore has over 350 members out of which over 200 is student member.</p>
                 </div>
-                <div class="col-lg-6 about-img">
+                <div class="col-6 about-img">
                     <img src="images/img2.jpeg" alt="">
                 </div>
             </div>
         </div>
     </section>
+<!-- Counter section -->
+    <section id="counter" class="section-light">
+
+        <div class="wrapper-counter d-flex flex-column flex-md-row justify-content-center align-items-center">
+            <div class="container-counter col-10 col-md-4">
+                <i class="fas fa-user-friends" style="color: #cccbdf"></i>
+                <span class="num" data-val="350">000</span>
+    
+                <span class="text">Total Members</span>
+            </div>
+
+      
+        <div class="container-counter col-10 col-md-4">
+          <i class="fas fa-user-graduate" style="color: #cccbdf"></i>
+          <span class="num" data-val="40">000</span>
+          <span class="text">Professional Members</span>
+        </div>
+
+
+        <div class="container-counter col-10 col-md-4">
+            <i class="fas fa-solid fa-user" style="color: #cccbdf"></i>
+            <span class="num" data-val="200">000</span>
+            <span class="text">Student Members </span>
+        </div>
+    </div>
+</section>
 
     <!-- About bangalore chapter -->
-    <section id="About-bangalore-chapter" class="section-dark" style="padding-top:0;">
+    <section id="About-bangalore-chapter" class="about-sec section-dark" style="padding-top:0;">
         <div class="container">
-            <div class="row d-flex justify-content-center align-items-center">
-                <div class="col-lg-6 about-img">
+            <div class="row d-flex flex-column-reverse flex-lg-row justify-content-center align-items-center">
+                <div class="col-6 about-img">
                     <img src="images/img2.jpeg" alt="">
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 col-12">
                     <h1 class="section-heading font-large text-white">About Bangalore Section</h1>
                     <p class="section-desc">IEEE Bangalore Section was established in 1977 and is one of the most vibrant and dynamic IEEE Section across globe. Over the years the strength of the section has grown steadily and currently the Section membership stands more than 8600. This membership is spread across various sectors and is a nice blend of Industry, Academia and Research organizations…</p>
                 </div>
@@ -44,29 +70,8 @@
     </section>
 
     <!-- Counter -->
-    <section id="counter" class="section-light">
-        <div class="container">
-            <div class="row d-flex justify-content-center align-items-center">
-                <div class="col-12 col-md-4 text-center">
-                    <div class="counter-total">0</div>
-                    <p class="section-desc text-dark">Total Members</p>
-                </div>
-                <div class="col-12 col-md-4 text-center">
-                    <div class="counter-professional">
-                        0
-                    </div>
-                    <p class="section-desc text-dark">Professional Members</p>
-                </div>
-                <div class="col-12 col-md-4 text-center">
-                    <div class="counter-student">
-                        0
-                    </div>
-                    <p class="section-desc text-dark">Student Members</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
+    
 
     <!-- start back-to-top -->
     <div id="back-to-top">
@@ -84,17 +89,21 @@
     <script src="js/jquery.barfiller.js"></script>
     <script src="js/index.js"></script>
     <script>
-        $(document).ready(function(){
-            let counts = setInterval(updated);
-            let upto = 0;
-            function updated() {
-                let count = document.getElementsByClassName("counter-total");
-                count.innerHTML = ++upto;
-                if (upto === 1000) {
-                    clearInterval(counts);
-                }
+        let valueDisplays = document.querySelectorAll(".num");
+        let interval = 4000;
+  
+        valueDisplays.forEach((valueDisplay) => {
+          let startValue = 0;
+          let endValue = parseInt(valueDisplay.getAttribute("data-val"));
+          let duration = Math.floor(interval / endValue);
+          let counter = setInterval(function () {
+            startValue += 1;
+            valueDisplay.textContent = startValue;
+            if (startValue == endValue) {
+              clearInterval(counter);
             }
-        })
-    </script>
+          }, duration);
+        });
+      </script>
 </body>
 </html>
